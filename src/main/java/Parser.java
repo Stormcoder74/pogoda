@@ -39,7 +39,6 @@ public class Parser {
 
     public static void main(String[] args) {
         Document page = getPage("http://www.pogoda.spb.ru/");
-//        css query language
         Element tableWeth = page.select("table[class=wt]").first();
         Elements headers = tableWeth.select("tr[class = wth]");
         Elements values = tableWeth.select("tr[valign = top]");
@@ -51,17 +50,19 @@ public class Parser {
         int valueIndex = 0;
         for (Element header : headers) {
             String date = getDateFromString(header.select("th[id = dt]").text());
+            System.out.printf("%5s %52s %14s %11s %12s %15s\n",
+                    date, "Явления", "Температура", "Давление", "Влажность", "Ветер");
 
-            System.out.printf("%5s %52s %14s %11s %12s %15s\n", date, "Явления", "Температура", "Давление", "Влажность", "Ветер");
             for (; valueIndex < values.size(); valueIndex++) {
                 Elements data = values.get(valueIndex).select("td");
                 String time = data.get(0).text();
-                String conditions = data.get(1).text();
-                String temperature = data.get(2).text();
-                String pressure = data.get(3).text();
-                String humidity = data.get(4).text();
-                String wind = data.get(5).text();
-                System.out.printf("%5s %52s %14s %11s %12s %15s\n", time, conditions, temperature, pressure, humidity, wind);
+                System.out.printf("%5s %52s %14s %11s %12s %15s\n",
+                        time,
+                        data.get(1).text(),
+                        data.get(2).text(),
+                        data.get(3).text(),
+                        data.get(4).text(),
+                        data.get(5).text());
                 if (time.toLowerCase().equals("ночь")) {
                     valueIndex++;
                     System.out.println();
