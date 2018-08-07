@@ -1,3 +1,5 @@
+package html;
+
 public class WeatherReport {
     private String date;
     private String time;
@@ -7,13 +9,13 @@ public class WeatherReport {
     private String humidity;
     private String wind;
 
-    public WeatherReport(String date,
-                         String time,
-                         String conditions,
-                         String temperature,
-                         String pressure,
-                         String humidity,
-                         String wind) {
+    WeatherReport(String date,
+                  String time,
+                  String conditions,
+                  String temperature,
+                  String pressure,
+                  String humidity,
+                  String wind) {
         this.date = date;
         this.time = time;
         this.conditions = conditions;
@@ -23,31 +25,31 @@ public class WeatherReport {
         this.wind = wind;
     }
 
-    public String getDate() {
+    String getDate() {
         return date;
     }
 
-    public String getTime() {
+    String getTime() {
         return time;
     }
 
-    public String getConditions() {
+    String getConditions() {
         return conditions;
     }
 
-    public String getTemperature() {
+    String getTemperature() {
         return temperature;
     }
 
-    public String getPressure() {
+    String getPressure() {
         return pressure;
     }
 
-    public String getHumidity() {
+    String getHumidity() {
         return humidity;
     }
 
-    public String getWind() {
+    String getWind() {
         return wind;
     }
 }

@@ -1,3 +1,5 @@
+package html;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -34,10 +36,6 @@ public class Parser {
             return matcher.group();
         }
         return "Нет даты";
-    }
-
-    public static void main(String[] args) {
-        parse();
     }
 
     public static List<WeatherReport> parse() {
