@@ -14,7 +14,8 @@ public class Controller {
     public WebView webView;
 
     public void clickButton(ActionEvent actionEvent) {
-        List<WeatherReport> reportList = Parser.parse();
+        List<WeatherReport> reportList = Parser.parseSpbRu();
+//        List<WeatherReport> reportList = Parser.parseDarkskyNet();
 
         WebEngine webEngine = webView.getEngine();
         webEngine.loadContent(PageMaker.make(reportList));
