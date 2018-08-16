@@ -13,6 +13,10 @@ import tk.plogitech.darksky.forecast.model.Longitude;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -20,14 +24,9 @@ import java.util.regex.Pattern;
 
 public class Parser {
     private static Pattern dateSpbRuPattern;
-    private static Pattern dateDarkskyNetPattern;
-    private static Pattern timeDarkskyNetPattern;
 
     static {
         dateSpbRuPattern = Pattern.compile("\\d{2}\\.\\d{2}");
-        dateDarkskyNetPattern = Pattern.compile("\\d{2}\\.\\d{2}");
-        timeDarkskyNetPattern = Pattern.compile("\\d{2}\\.\\d{2}");
-
     }
 
     private static Document getPage(String url) {
@@ -85,10 +84,12 @@ public class Parser {
         return reportList;
     }
 
-    public static List<WeatherReport> parseDarkskyNet(){
+    public static List<WeatherReport> parseDarkskyNet() {
         String apiKey = "0ed7feb0af3ae55251c37e7f0c52a2ad";
         double latitude = 46.616280;
         double longitude = 142.777985;
+
+        List<WeatherReport> wrList = new ArrayList<>();
 
         ForecastRequest request = new ForecastRequestBuilder()
                 .key(new APIKey(apiKey))
@@ -105,18 +106,26 @@ public class Parser {
         try {
             Forecast forecast = client.forecast(request);
 
-            for (HourlyDataPoint hdp: forecast.getHourly().getData()){
-                if(hdp.getTime().)
+            LocalDate date;
+            LocalTime time;
+            for (HourlyDataPoint hdp : forecast.getHourly().getData()) {
+                date = LocalDateTime.ofInstant(hdp.getTime(), ZoneId.of("+11:00")).toLocalDate();
+                time = LocalDateTime.ofInstant(hdp.getTime(), ZoneId.of("+11:00")).toLocalTime();
+
+                if (time.toString().equals("00:00")
+                        || time.toString().equals("06:00")
+                        || time.toString().equals("12:00")
+                        || time.toString().equals("18:00")) {
+
+                    wrList.add(new WeatherReport(date.toString(), time.toString(),
+                            hdp.getSummary(), hdp.getTemperature().toString(),
+                            hdp.getPressure().toString(), hdp.getHumidity().toString(),
+                            (hdp.getWindBearing() + " " + hdp.getWindSpeed())));
+                }
             }
         } catch (ForecastException e) {
             e.printStackTrace();
         }
-
-
-        List<WeatherReport> wrList = new ArrayList<>();
-
-
-
 
         return wrList;
     }
