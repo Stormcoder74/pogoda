@@ -12,9 +12,9 @@ public class PageMaker {
         VelocityEngine velocityEngine = new VelocityEngine();
         velocityEngine.init();
 
-        Template thRow = velocityEngine.getTemplate("thRow.tmpl", "UTF-8");
-        Template tdRow = velocityEngine.getTemplate("tdRow.tmpl", "UTF-8");
-        Template page = velocityEngine.getTemplate("page.tmpl", "UTF-8");
+        Template thRow = velocityEngine.getTemplate("thRow.html", "UTF-8");
+        Template tdRow = velocityEngine.getTemplate("tdRow.html", "UTF-8");
+        Template page = velocityEngine.getTemplate("page.html", "UTF-8");
         VelocityContext vContext = new VelocityContext();
 
         StringBuilder tbody = new StringBuilder();
@@ -34,7 +34,8 @@ public class PageMaker {
             vContext.put("temperature", wReport.getTemperature());
             vContext.put("pressure", wReport.getPressure());
             vContext.put("humidity", wReport.getHumidity());
-            vContext.put("wind", wReport.getWind());
+            vContext.put("windBearing", wReport.getWindBearing());
+            vContext.put("windSpeed", wReport.getWindSpeed());
             tdRow.merge(vContext, dRowWriter);
             tbody.append(dRowWriter.toString());
         }

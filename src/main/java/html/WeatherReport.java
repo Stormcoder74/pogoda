@@ -7,7 +7,8 @@ public class WeatherReport {
     private String temperature;
     private String pressure;
     private String humidity;
-    private String wind;
+    private String windBearing;
+    private String windSpeed;
 
     WeatherReport(String date,
                   String time,
@@ -15,14 +16,16 @@ public class WeatherReport {
                   String temperature,
                   String pressure,
                   String humidity,
-                  String wind) {
+                  String windBearing,
+                  String windSpeed) {
         this.date = date;
         this.time = time;
         this.conditions = conditions;
         this.temperature = temperature;
         this.pressure = pressure;
         this.humidity = humidity;
-        this.wind = wind;
+        this.windBearing = windBearing;
+        this.windSpeed = windSpeed;
     }
 
     String getDate() {
@@ -49,7 +52,11 @@ public class WeatherReport {
         return humidity;
     }
 
-    String getWind() {
-        return wind;
+    String getWindBearing() {
+        return windBearing;
+    }
+
+    public String getWindSpeed() {
+        return windSpeed;
     }
 }
