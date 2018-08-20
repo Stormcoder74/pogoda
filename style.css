@@ -1,0 +1,292 @@
+#idt
+{
+	font-size: 8px;
+	font-family: Verdana;
+	text-align: center;
+
+}
+.ng
+{
+	font-size: 9px;
+	text-align: center;
+}
+.ng a
+{
+	font-size: 9px;
+	text-decoration: none;
+}
+
+.wh1
+{
+	font-size: 10px;
+	font-weight: bold;
+	color: #222a82;
+
+	padding: 0px 0px 0px 0px;
+margin: 0px 0px 0px 0px;
+margin-bottom: 0px;
+}
+
+.mn1h
+{
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 0px;
+	padding-bottom: 4px;
+}
+.mn1d
+{
+	font-size: 10px;
+	font-weight: normal;
+	padding-top: 10px;
+	padding-bottom: 0px;
+}
+.mn1b
+{
+	font-size: 10px;
+	padding-bottom: 4px;
+
+}
+
+
+table.th1 
+{
+	background: #5050ae;
+	color: #F0F0F0;
+	text-color: #F0F0F0;
+}
+
+table.th1 th
+{
+	color=#F0F0F0;
+	text-color=#F0F0F0;
+}
+
+.th1 a
+{
+	background: #5050ae;
+	color: #F0F0F0;
+	text-color: #F0F0F0;
+
+}
+table.mn th
+{
+	background-color: #fcdf84;
+	align: center;
+	color: #222a82;
+
+}
+table.mn th a
+{
+	background-color: #fcdf84;
+	align: center;
+	color: #222a82;
+	
+}
+
+table.wi_1 th
+{
+	background-color: #fcdf84;
+	align: center;
+	color: #222a82;
+
+}
+table.wi_1 th a
+{
+	background-color: #fcdf84;
+	align: center;
+	color: #222a82;
+	
+}
+
+table.wi_2 th
+{
+	background-color: #fcdf84;
+	align: center;
+	color: #222a82;
+
+}
+table.wi_2 th a
+{
+	background-color: #fcdf84;
+	align: center;
+	color: #222a82;
+	
+}
+
+table.wi_1,table.wi_2
+{
+	cellpadding: 0px;
+	padding: 0px;
+	border-collapse: collapse;
+}
+
+#npgi
+{
+	cellpadding: 0px;
+cellspacing: 0px;
+padding: 0px;
+}
+
+#dt { width=80px; }
+#pt { width=60px; }
+#tt { width=50px; }
+#ht { width=60px; }
+#wt { width=70px; }
+#yt { width=210px;}
+
+td
+{
+	font-size: 12px;
+}
+th
+{
+	font-size: 12px;
+	font-weight: bold;
+}
+.rl
+{
+	font-size: 12px;
+	font-weight: bold;
+}
+.rl2
+{
+	font-size: 10px;
+	padding-left: 0px;
+	margin-left: 15px;
+	font-weight: normal;
+}
+
+.rl a
+{
+	text-decoration: none;
+	padding-left: 0px;
+	margin-left: 0px;
+}
+
+.rl a:hover
+{
+		text-weight: bold;
+}
+
+.rl2 a
+{
+	text-decoration: none;
+	padding-left: 0px;
+	margin-left: 0px;
+}
+
+.rl2 a:hover
+{
+	text-weight: bold;
+}
+
+#inf
+{
+	width: 160px;
+	height=115px;
+	position: relative;
+
+}
+#itemp
+{
+	font-size: 20px;
+	text-align: center;
+	padding: 0px 0px 6px 0px;
+}	
+#itemp a
+{
+	text-decoration: none;
+}
+#ipr
+{
+	font-size: 10px;
+	text-align: center;
+	padding-top: 5px;
+}
+#iwind
+{
+	font-size: 10px;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+
+h1
+{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.ml
+{
+	font-size: 10px;
+	font-weight: bold;
+}
+.ml a
+{
+	text-decoration: none;
+	padding-left: 0px;
+	margin-left: 0px;
+}
+.ml a:hover
+{
+	text-decoration: underline;
+	padding-left: 0px;
+	margin-left: 0px;
+}
+.m1
+{
+	font-size: 12px;
+}
+
+tr.wth
+{
+	background-color: #6b6bd0;
+	align: center;
+	text-color: #FFFFFF;
+	
+}
+.wth th
+{
+	color: #FFFFFF;
+	font-weight: bold;
+
+}
+
+.wt, .wt td,.wt th
+{
+border: 1px solid #FFFFFF;
+padding: 2px 2px 2px 2px;
+}
+
+.wt td 
+{
+	background-color: #EbEbEb;
+}
+
+BODY, TH, TD,P, INPUT {
+    font-family : Verdana,Arial, sans-serif;
+    font-size : 11px;
+}
+H1{
+    font-family : Arial,Verdana, sans-serif;
+    font-size: 20px;
+    color: #f0f0f0;
+    bottommargin: 0;
+    topmargin: 0;
+    leftmargin: 0;
+    rightmargin: 0;
+    MARGIN: 0px 0px;
+
+}
+H2{
+    font-family : Verdana,Arial, sans-serif;
+    font-size : 16px;
+    color: #F0F0F0;
+}
+
+
+
+
+//
